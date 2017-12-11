@@ -70,7 +70,9 @@ const outData = {
 
 console.log()
 console.log('   正在初始化浏览器……')
-puppeteer.launch().then(async browser => {
+
+puppeteer.launch({
+   args: ["--no-sandbox", "--disable-setuid-sandbox"]}).then(async browser => {
     console.log('   初始化完成，开始抓取页面')
     const page = await browser.newPage();
     await page.goto('https://passport.jd.com/new/login.aspx');
