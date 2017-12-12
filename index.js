@@ -219,6 +219,7 @@ async function login(ticket) {
     })
 
     defaultInfo.header['p3p'] = result.headers['p3p']
+    console.log(defaultInfo.header);
     return defaultInfo.cookieData = result.headers['set-cookie']
 }
 
