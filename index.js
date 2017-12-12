@@ -30,6 +30,8 @@ const fs = require('fs')
 const opn = require('opn')
 const iconv = require('iconv-lite')
 const puppeteer = require('puppeteer')
+
+request.defaults.withCredentials =true;
 //var Jimp = require('jimp')
 //var QrCode = require('qrcode-reader')
 //var ImageParser = require("image-parser");
