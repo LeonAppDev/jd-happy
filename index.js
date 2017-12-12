@@ -124,7 +124,7 @@ puppeteer.launch({
     return login(ticket)
 }).then(() => {
     console.log('   登录成功')
-    console.log(defaultInfo.cookieData);
+  //  console.log(defaultInfo.cookieData);
     return runGoodSearch()
 }).then(() => {
     return addCart()
@@ -147,7 +147,9 @@ async function requestScan() {
     })
 
     defaultInfo.cookies = cookieParser(result.headers['set-cookie'])
+    console.log('----------------------Print first header------------')
     defaultInfo.cookieData = result.headers['set-cookie'];
+      console.log('----------------------Print first header------------')
     const image_file = result.data;
 
     await writeFile('qr.png', image_file)
@@ -201,6 +203,7 @@ async function listenScan() {
     }
     console.log('----------------------Print ticket------------')
     console.log(ticket);
+    console.log('----------------------Print ticket------------')
     return ticket
 }
 
