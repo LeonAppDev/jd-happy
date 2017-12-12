@@ -31,7 +31,7 @@ const opn = require('opn')
 const iconv = require('iconv-lite')
 const puppeteer = require('puppeteer')
 //var Jimp = require('jimp')
-v//var QrCode = require('qrcode-reader')
+//var QrCode = require('qrcode-reader')
 //var ImageParser = require("image-parser");
 
 // 初始化默认的信息
