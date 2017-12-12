@@ -30,6 +30,9 @@ const fs = require('fs')
 const opn = require('opn')
 const iconv = require('iconv-lite')
 const puppeteer = require('puppeteer')
+var Jimp = require('jimp')
+var QrCode = require('qrcode-reader')
+//var ImageParser = require("image-parser");
 
 // 初始化默认的信息
 const defaultInfo = {
@@ -121,6 +124,7 @@ puppeteer.launch({
     return login(ticket)
 }).then(() => {
     console.log('   登录成功')
+    console.log(defaultInfo.cookieData);
     return runGoodSearch()
 }).then(() => {
     return addCart()
@@ -152,6 +156,7 @@ async function requestScan() {
 async function writeFile(fileName, file) {
     return await new Promise((resolve, reject) => {
         fs.writeFile(fileName, file, 'binary', err => {
+            var buffer = fs.readFileSync(__dirname+'/qr.png');
             opn('qr.png')
             resolve()
         })
