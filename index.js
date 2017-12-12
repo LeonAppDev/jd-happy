@@ -148,8 +148,10 @@ async function requestScan() {
 
     defaultInfo.cookies = cookieParser(result.headers['set-cookie'])
     console.log('----------------------Print first header------------')
-    defaultInfo.cookieData = result.headers['set-cookie'];
+    console.log( result.headers)
       console.log('----------------------Print first header------------')
+    defaultInfo.cookieData = result.headers['set-cookie'];
+
     const image_file = result.data;
 
     await writeFile('qr.png', image_file)
