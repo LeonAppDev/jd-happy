@@ -199,7 +199,8 @@ async function listenScan() {
         eval('callback.' + result.data);
         await sleep(1000)
     }
-
+    console.log('----------------------Print ticket------------')
+    console.log(ticket);
     return ticket
 }
 
@@ -219,7 +220,9 @@ async function login(ticket) {
     })
 
     defaultInfo.header['p3p'] = result.headers['p3p']
+    console.log('----------------------Print header------------')
     console.log(result.headers);
+    console.log('----------------------Print header------------')
     return defaultInfo.cookieData = result.headers['set-cookie']
 }
 
